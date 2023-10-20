@@ -3,11 +3,11 @@ import SwiftData
 
 @Model
 final class Tag {
-    var name: String
+    var name: String = ""
 
     var todos: [Todo]?
     
-    var color: RGBColor
+    var color: RGBColor?
 
     init(name: String = "", color: RGBColor) {
         self.name = name

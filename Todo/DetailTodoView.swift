@@ -15,7 +15,7 @@ struct DetailTodoView: View {
                     ForEach(tags.sorted(by: { $0.name < $1.name })) { tag in
                         Text(tag.name)
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 5).stroke(tag.color.color, lineWidth: 4))
+                            .background(RoundedRectangle(cornerRadius: 5).stroke(tag.color?.color ?? Color.red, lineWidth: 4))
                             .onTapGesture {
                                 if let index = todo.tags?.firstIndex(where: { $0 == tag }) {
                                     todo.tags?.remove(at: index)

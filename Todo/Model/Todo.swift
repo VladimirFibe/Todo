@@ -4,11 +4,10 @@ import SwiftData
 @Model
 final class Todo {
 
-    @Attribute(.unique)
-    var creationDate: Date
-    var name: String
-    var isDone: Bool
-    var priority: Int
+    var creationDate: Date = Date()
+    var name: String = ""
+    var isDone: Bool = false
+    var priority: Int = 0
 
     @Attribute(.externalStorage)
     var image: Data?
@@ -16,9 +15,7 @@ final class Todo {
     var tags: [Tag]?
     
     init(name: String = "", priority: Int = 0) {
-        self.creationDate = Date()
         self.name = name
-        self.isDone = false
         self.priority = priority
     }
 }
